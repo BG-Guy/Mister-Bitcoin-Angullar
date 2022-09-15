@@ -1,0 +1,72 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: inherit;
+  .logo {
+    flex: 1;
+    font-size: 50px;
+    font-family: AvenirHeavy;
+    color: aliceblue;
+    position: relative;
+    em {
+      font-style: normal;
+      color: gold;
+    }
+
+    .bitcoin-animation {
+      position: absolute;
+      top: 12px;
+      left: 235px;
+      height: 80px;
+      width: 80px;
+    }
+  }
+
+  .nav-links {
+    @media (max-width: 900px) {
+      display: none;
+    }
+    display: flex;
+    gap: 30px;
+    padding: 1rem 0;
+    font-size: 30px;
+    z-index: 10;
+
+    a {
+      color: aliceblue;
+      &:hover {
+        cursor: pointer;
+        color: gold;
+      }
+    }
+  }
+
+  .hamburger-menu {
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    &:hover {
+      color: gold;
+    }
+    @media (min-width: 900px) {
+      display: none;
+    }
+  }
+}
+
+.bitcoin-animation-container {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+}
+
+.side-menu a {
+  font-size: 1.5rem;
+  padding: 1rem;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

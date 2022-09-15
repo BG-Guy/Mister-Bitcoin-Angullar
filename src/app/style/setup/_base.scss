@@ -1,0 +1,145 @@
+body {
+  margin: 0px;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body.modal-open {
+  background-color: white;
+  overflow: hidden;
+}
+
+body .side-menu {
+  z-index: 9999;
+  position: absolute;
+  display: none;
+
+  flex-direction: column;
+  transform: translateX(-100%);
+  width: 50vw;
+  height: 90vh;
+  background-color: aliceblue;
+  color: black;
+  transition: all 0.3s ease-in-out;
+  @include for-mobile-layout {
+    display: flex;
+  }
+
+  &.open {
+    transform: translateX(0%);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+li,
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  :hover {
+    color: white;
+  }
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  * {
+    pointer-events: none;
+  }
+}
+
+input {
+  font-family: inherit;
+  text-align: inherit;
+}
+
+.img-container {
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.navbar,
+.footer {
+  height: 100%;
+  display: flex;
+  width: 100%;
+}
+
+@function rem($size) {
+  $remSize: calc($size / 16px);
+  @return calc(($remSize) * 1rem);
+}
+
+@function em($pixels, $context: 16px) {
+  @return calc(($pixels/$context) * 1em);
+}
+
+@function lh($pixels, $context: 16px) {
+  @return calc(($pixels/$context));
+}
+
+.navbar-container,
+.footer-container,
+.main-content-container {
+  width: 100vw;
+}
+
+.main-content-container,
+.main-content {
+  min-height: 80vh;
+}
+
+.footer-container,
+.navbar-container {
+  height: 10vh;
+  background-color: transparent;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-container {
+  bottom: 0px;
+  z-index: 0;
+}
+
+input {
+  border: none;
+  outline: none;
+}

@@ -1,0 +1,64 @@
+.modal-container {
+  background-image: url("http://localhost:4200/assets/imgs/home-page-bgc.jpeg");
+  object-fit: cover;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  .login-modal {
+    margin: auto;
+    font-family: AvenirRoman;
+    padding: 2rem;
+    width: 30rem;
+    aspect-ratio: 9/12;
+    background-color: rgba(255, 255, 255, 0.29);
+    backdrop-filter: blur(3px);
+    z-index: 9999;
+    color: aliceblue;
+    font-size: 1rem;
+    .header {
+      display: grid;
+      grid-template-columns: 5fr 1fr;
+      .close-btn {
+        justify-content: end;
+        background-color: rgba(255, 255, 255, 0.19);
+        backdrop-filter: blur(3px);
+        top: -25px;
+        right: -25px;
+        position: relative;
+        border: none;
+      }
+      .modal-title {
+        text-align: center;
+        margin-left: 20%;
+      }
+    }
+    label {
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 2rem;
+      gap: 20px;
+      flex: 1;
+      input {
+        width: 50%;
+        border-radius: 4px;
+      }
+    }
+    .login-btn {
+      width: 100%;
+      margin-top: 50%;
+      padding: 1rem;
+      border: none;
+      font-size: 2rem;
+      border-radius: 4px;
+      &:hover {
+        background-color: gold;
+        color: white;
+      }
+    }
+  }
+}

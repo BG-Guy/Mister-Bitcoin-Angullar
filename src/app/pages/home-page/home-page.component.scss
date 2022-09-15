@@ -1,0 +1,106 @@
+.hero-container {
+  position: fixed;
+  // z-index: 10;
+  top: 10%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 800px) {
+    grid-template-rows: 1fr 0.5fr;
+    grid-template-columns: 1fr;
+    .hero {
+      justify-self: start;
+    }
+  }
+
+  .hero {
+    justify-self: start;
+    transform: translate(-181px, 0px);
+  }
+
+  .greet-msg {
+    color: white;
+    justify-self: end;
+    transform: translateY(10%);
+    @media (max-width: 800px) {
+      justify-self: center;
+    }
+    .cta-btn {
+      width: 300px;
+      height: calc(300px / 3);
+      margin-top: 3rem;
+      border-radius: 4px;
+      z-index: 19;
+      position: relative;
+      // font-size: 20px;
+      // border: 1px solid red;
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+      // cursor: pointer;
+      // color: white;
+
+      // &:hover {
+      //   background-color: gold;
+      // }
+
+      // svg {
+      //   position: absolute;
+      //   width: 200px;
+      //   height: calc(200px / 3);
+      // }
+
+      background: darken(gold, 1.5%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        font-size: 2rem;
+        letter-spacing: 1px;
+        font-family: AvenirRoman;
+      }
+
+      svg {
+        width: 300px;
+        height: calc(300px / 3);
+        left: 0;
+        position: absolute;
+        bottom: 0;
+      }
+
+      rect {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 5;
+        stroke-dasharray: 422, 0;
+        transition: all 0.35s linear;
+      }
+
+      &:hover {
+        background-color: darken(gold, 1.5%);
+
+        rect {
+          stroke-width: 5;
+          stroke-dasharray: 45, 350;
+          stroke-dashoffset: 48;
+          transition: all 1.75s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        a {
+          color: white;
+        }
+      }
+      // width: 200px;
+      // height: calc(200px / 4);
+      // border-radius: 4px;
+      // border: 1px solid red;
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+    }
+  }
+  * {
+    z-index: 10;
+  }
+}

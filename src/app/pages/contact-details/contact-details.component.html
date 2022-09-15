@@ -1,0 +1,19 @@
+<section class="contact-details">
+        <contact-preview class="contact-preview-container" [contact]="contact"></contact-preview>
+    <section class="contact-dashboard">
+        <div class="block-one">
+            <button (click)="onBack()" class="back-btn">Back</button>
+            <button (click)="shouldTransferBitcoin()" class="should-transfer-btn">Should I Transfer Bitcoin?</button>
+        </div>
+        <div *ngIf="msg" class="image-container block-two">
+            <img src="{{msg}}" />
+        </div>
+        <div class="block-three">
+            <input type="number" [(ngModel)]="transaction.amount" name="bitcoin" id="bitcoin">
+            <button (click)="onTransferBitcoin()" class="transfer-btn">
+                TRANSFER
+            </button>
+
+        </div>
+    </section>
+</section>

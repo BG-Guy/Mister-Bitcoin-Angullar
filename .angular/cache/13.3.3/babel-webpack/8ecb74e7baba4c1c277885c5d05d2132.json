@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Transaction {\n  constructor() {\n    this.to = '';\n    this.from = '';\n    this._id = '100';\n    this.timestamp = Date.now();\n    this.amount = 0;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

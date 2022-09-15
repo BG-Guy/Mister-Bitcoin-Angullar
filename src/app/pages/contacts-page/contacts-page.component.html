@@ -1,0 +1,4 @@
+<div class="contact-page">
+    <contact-filter></contact-filter>
+    <contact-list (remove)="onRemoveContact($event)" [contacts]="contacts$ | async" ></contact-list>
+</div>

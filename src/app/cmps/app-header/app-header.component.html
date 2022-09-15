@@ -1,0 +1,29 @@
+<div class="navbar-container">
+    <div class="max-width-container navbar">
+        <a routerLink="" class="logo">
+            Mister <em>Bit</em>c
+            <span class="bitcoin-animation-container" >
+                <ng-lottie class="bitcoin-animation" height="50px" [options]="options"></ng-lottie>
+            </span>
+            in
+        </a>
+        <nav class="nav-links">
+            <a routerLink="">Home</a>
+            <a routerLink="contacts">Contacts</a>
+            <a routerLink="statistics">Statistics</a>
+            <a *ngIf="isGuest()" (click)="onModalToggle()" class="login-btn" >Sign In</a>
+            <a *ngIf="!isGuest()" (click)="onLogout()" class="login-btn" >Logout</a>
+        </nav>
+        <span (click)="onToggleSideMenu()" class="hamburger-menu">
+            ☰
+        </span>
+    </div>
+    <div [ngClass]="sideMenuOpen ? 'side-menu open' : 'side-menu'">
+            <a  routerLink="">Home</a>
+            <a  routerLink="contacts">Contacts</a>
+            <a  routerLink="statistics">Statistics</a>
+            <a  *ngIf="isGuest()" (click)="onModalToggle()" class="login-btn" >Sign In</a>
+            <a  *ngIf="!isGuest()" (click)="onLogout()" class="login-btn" >Logout</a>
+    </div>
+    <login-modal *ngIf="modalToggle" (toggle)="onModalToggle()" ></login-modal>
+</div>

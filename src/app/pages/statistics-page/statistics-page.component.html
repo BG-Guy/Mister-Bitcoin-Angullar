@@ -1,0 +1,62 @@
+<div *ngIf="!newMarketData && !marketTableTitle" class="flex loading-container">
+    <p>hello</p>
+</div>
+<div class="statistics-page-container">
+    <div class="header">
+        <h1>Bitcoin Market Chart</h1>
+        <h1>1 BTC = {{ rate }}USD</h1>
+    </div>
+    <div class="statistics-page-content">
+        <div class="carousel-viewport" >
+            <div class="carousel-track" [ngStyle]="{'transform': 'translateX(-' + slideCount * 50 + '%)'}">
+                <div class="chart-container slide" *ngIf="newMarketData && newMarketData">
+                    <div class="chart-sidebar">
+                        <li>40,000</li>
+                        <li>38,000</li>
+                        <li>36,000</li>
+                        <li>34,000</li>
+                        <li>32,000</li>
+                        <li>30,000</li>
+                        <li>28,000</li>
+                    </div>
+                    <chart class="chart-content"
+                    [marketData]="newMarketData"
+                    [marketTableTitle]="marketTableTitle">
+                </chart>
+                <div class="chart-bottom-bar">
+                    <li>{{ formatMonth(currMonth) }}</li>
+                    <li>{{ formatMonth(currMonth + 1) }}</li>
+                </div>
+            </div>
+            <div class="last-transactions slide">
+                <div class="transactions-container">
+                    <div *ngFor="let transaction of userTransactions" class="transactions">
+                        <div class="header">
+                            <h1 class="name">
+                                {{ transaction.to }}
+                            </h1>
+                            <div class="image-container">
+                                <img src="https://robohash.org/{{transaction.to}}?set=set5" alt="">
+                            </div>
+                        </div>
+                        <div class="content">
+                            {{ transaction.amount }}
+                        </div>
+                        <div class="footer">
+                            {{ transaction.timestamp | date }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-indicator">
+        <span class="carousel-btn" (click)="handleSlideCount(1)">NEXT</span>
+        <div class="indicator-dots">
+            <span class="indicator-dot" (click)="goToSlide(0)" [ngClass]="slideCount === 0 ? 'active-dot' : ''"></span>
+            <span class="indicator-dot" (click)="goToSlide(1)" [ngClass]="slideCount === 1 ? 'active-dot' : ''"></span>
+        </div>
+        <span class="carousel-btn" (click)="handleSlideCount(-1)">BACK</span>
+    </div>
+</div>  
+</div>

@@ -1,0 +1,13 @@
+<div class="app-container">
+  <!-- <app-header></app-header> -->
+  <app-header></app-header>
+  <main class="main-content-container">
+  <div class="img-container" >
+      <img src="assets/imgs/home-page-bgc.jpeg" [ngStyle]="{height: scroll + 100 +'%'}" alt="">
+  </div>
+    <div class="main-content max-width-container">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+  <app-footer></app-footer> 
+</div> 

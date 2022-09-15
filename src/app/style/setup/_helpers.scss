@@ -1,0 +1,13 @@
+.max-width-container {
+  @include for-mobile-layout {
+    max-width: $screen-m;
+  }
+  @include for-tablet-layout {
+    max-width: $screen-l;
+  }
+  @include for-desktop-layout {
+    max-width: $screen-xl;
+  }
+  padding: 0 1rem;
+  margin: auto;
+}
